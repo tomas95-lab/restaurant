@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    background-color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+ul li {
+    margin: 0 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+}
+
+ul li::after {
+    content: "";
+    position: absolute;
+    background-color: #f00;
+    display: block;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .4s;
+}
+
+ul li:hover::after {
+    transform: translateY(5px);
+    opacity: 1;
+}
+
+img {
+    width: 50%;
+}
+
+.logo img {
+    width: 20%;
+}
+
+.intro {
+    color: #fff;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    height: 100vh;
+}
+
+.background-intro {
+    position: absolute;
+    inset: 0;
+    background: url(helpers/banner_1.jpg);
+    z-index: -1;
+    filter: brightness(.4);
+}
+
+p {
+    color: #555;
+}
+
+.intro p {
+    margin: 20px 0;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+}
+
+.intro button {
+    padding: 12px 25px;
+    background-color: #ffa900;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.intro button:active {
+    background-color: #7a5305;
+}
+
+.services {
+    width: 100%;
+    margin: 30px 0;
+    border-bottom: 1px #ccc solid;
+    text-align: center;
+}
+
+.services-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 100px;
+    overflow: hidden;
+}
+
+.services-container div {
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.services img {
+    width: 90px;
+    margin: 20px 0;
+}
+
+.dishes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.dish {
+    position: relative;
+    padding: 10px 17px;
+    box-shadow: 0px 5px 10px #bbb;
+    border-radius: 10px;
+    margin: 40px 10px;
+    background-color: #fff;
+}
+
+.dishes img {
+    position: relative;
+    width: 250px;
+}
+
+.dish div {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#price {
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 0px 3px #ccc;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background-color: #080!important;
+}
+
+.dish button {
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    filter: drop-shadow(4px 5px 5px #ccc);
+}
+
+.dish__buttons button:nth-child(1) {
+    background-color: #ffa900;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .services-container {
+        flex-wrap: wrap;
+    }
+}
+
+.login {
+    width: 300px;
+    padding: 70px 10px;
+    position: absolute;
+    background: #fff;
+    top: 70px;
+    right: 0;
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+form input {
+    width: 70%;
+    padding: 5px 10px;
+    outline: none;
+    transition: all .8s;
+    border: 2px solid #ccc;
+}
+
+.email,
+.password {
+    position: relative;
+}
+
+label {
+    position: absolute;
+    left: 30px;
+    top: 5px;
+    user-select: none;
+    font-size: 12px;
+    background-color: #fff;
+    transition: all .8s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border: 2px solid rgb(0, 76, 255);
+}
+
+input[type="email"]:focus+label,
+input[type="password"]:focus+label {
+    color: rgb(0, 76, 255);
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    background-color: rgb(0, 76, 255);
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.alerta {
+    width: 100%;
+    height: 100px;
+    border: 2px solid rgb(238, 69, 69);
+    background-color: rgb(233, 233, 233);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: relative;
+    top: 10px;
+}
+
+.count {
+    position: absolute;
+    right: -20px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    padding: 1px !important;
+    background-color: #ffa900;
+    border-radius: 50%;
+    bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+p a {
+    color: #009 !important;
+}
+
+li #menu a {
+    cursor: not-allowed !important;
+}
